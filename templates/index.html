@@ -1,0 +1,25 @@
+<table align="center" border="0">
+    <form action="{% url 'weather_details' %}" method="post">
+        {%  csrf_token %}
+    <tr><th>
+        WEATHER DETAILS
+    </th></tr>
+    <tr><th>
+        city names
+        <input type="text" name="c1" required>
+        <button type="submit">search</button>
+    </th>
+    </tr>
+    </form>
+</table>
+
+<table align="center" border="2">
+{#    <tr>{{ data }}</tr>#}
+{%  for x,y in data.items%}
+    <tr>
+    <th>{{ x }}</th><th>{{ y }}</th>
+    </tr>
+{% endfor %}
+</table>
+{#</table>#}
+{#{{ data }}#}
